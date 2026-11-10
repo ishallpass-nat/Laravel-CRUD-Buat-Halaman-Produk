@@ -10,22 +10,10 @@
         <h1>Input Customer Data</h1>
             <form action="{{ route('customers.store') }}" method="POST">
                 @csrf
-                <div class="mb-3">
-                    <label for="name" class="form-label">Customer Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Rudy Setiawan">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Customer Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email@gmai.com">
-                </div>
-                <div class="mb-3">
-                    <label for="city" class="form-label">Customer City</label>
-                    <input type="city" class="form-control" id="city" name="city" placeholder="city">
-                </div>
-                <div class="mb-3 d-flex justify-content-end">
-                    <button type="submit" class="btn btn_primary"> Save Customer Data</button>
-                </div>
-
+                @include('customers._form', [
+                    'buttontext' => 'Save Customer Data',
+                    'customer' => null,
+                ])
                 </div>
             </form>
             </div>
